@@ -15,7 +15,7 @@ describe User, type: :model do
     end
 
     it 'uniqueness of username' do
-      user1 = User.create!(username: 'hmesander', password: 'test')
+      User.create!(username: 'hmesander', password: 'test')
       user2 = User.new(username: 'hmesander', password: 'test2')
 
       expect(user2).to_not be_valid
