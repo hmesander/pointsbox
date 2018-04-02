@@ -20,7 +20,6 @@ describe 'User visits rewards index page' do
       visit admin_rewards_path
 
       expect(page).to_not have_content('Add a Reward')
-      expect(page).to have_content('Rewards')
     end
   end
 end
