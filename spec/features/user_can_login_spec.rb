@@ -2,6 +2,8 @@ require 'rails_helper'
 
 describe 'User' do
   it 'can log in' do
+    user = User.create!(username: 'hmesander', password: 'test')
+
     visit root_path
 
     click_on 'Log In'
@@ -13,6 +15,7 @@ describe 'User' do
 
     click_on 'Log In'
 
-    expect(page).to have_content('Welcome, hmesander!')
+    expect(current_path).to eq(user_path(user))
+    expect(page).to have_content("Welcome, #{user.username}!")
   end
 end
