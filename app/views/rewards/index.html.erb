@@ -1,3 +1,6 @@
 <% @rewards.each do |reward| %>
-  <%= reward.title %>
+  <div>
+    <%= reward.title %>
+    <%= link_to 'Update Reward', edit_admin_reward_path(reward), title: reward.title %>
+  </div>
 <% end %>

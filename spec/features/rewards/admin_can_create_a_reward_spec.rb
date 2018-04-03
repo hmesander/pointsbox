@@ -14,10 +14,14 @@ describe 'Admin' do
       expect(current_path).to eq(new_admin_reward_path)
 
       fill_in 'Title', with: 'Phone Time'
+      fill_in 'Value', with: 40
+      fill_in 'Description', with: 'Awesome!'
+      page.attach_file('Image', Rails.root + 'public/phone.jpeg')
       click_on 'Create Reward'
 
-      expect(current_path).to eq(rewards_path)
+      expect(current_path).to eq(admin_rewards_path)
       expect(page).to have_content('Phone Time')
+      expect(page).to have_content(40)
     end
   end
 end
