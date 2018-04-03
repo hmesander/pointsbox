@@ -21,6 +21,14 @@ class RewardsController < ApplicationController
     redirect_to admin_rewards_path
   end
 
+  def destroy
+    @reward = Reward.find(params[:id])
+    @reward.destroy
+
+    flash[:success] = "#{@reward.title} was deleted."
+    redirect_to admin_rewards_path
+  end
+
   private
     def reward_params
       params.require(:reward).permit(:title, :description, :image, :value)
