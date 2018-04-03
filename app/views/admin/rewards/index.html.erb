@@ -1,2 +1,12 @@
 <h1>Rewards</h1>
 <%= link_to 'Add a Reward', new_admin_reward_path %>
+<% @rewards.each do |reward| %>
+  <div>
+    <%= reward.title %>
+    <%= reward.description %>
+    <%= reward.value %>
+    <%= reward.image %>
+    <%= link_to 'Update Reward', edit_admin_reward_path(reward), title: reward.title %>
+    <%= link_to "Delete Reward", reward_path(reward), title: reward.description, method: "delete", data: {confirm: "Are you sure you want to delete #{reward.title}?"} %>
+  </div>
+<% end %>
