@@ -31,10 +31,24 @@ describe User, type: :model do
     end
 
     it 'can be created as a default user' do
-      user = User.create!(username: 'hmesander', password: 'test', role: 0)
+      user = User.create!(username: 'hmesander', password: 'test')
 
       expect(user.role).to eq('default')
       expect(user.default?).to be_truthy
+    end
+  end
+
+  describe 'instance methods' do
+    describe '.total_points' do
+      it 'returns total points for a user' do
+        user = User.create!(username: 'Haley', password: 'test')
+        point1 = user.points.create!(status: 'active')
+        point2 = user.points.create!(status: 'active')
+        point3 = user.points.create!(status: 'active')
+        point4 = user.points.create!(status: 'active')
+
+        expect(user.total_points).to eq(4)
+      end
     end
   end
 end

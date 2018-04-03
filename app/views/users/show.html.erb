@@ -1,2 +1,3 @@
 <h1>Welcome, <%= current_user.username %>!</h1>
+Total Points: <%= @user.total_points %>
 <%= link_to 'Log Out', logout_path, method: 'delete' %>
