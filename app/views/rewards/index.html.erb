@@ -4,7 +4,7 @@
     <%= reward.description %>
     <%= reward.value %>
     <%= reward.image %>
-    <% if @user %>
+    <% if current_user %>
       <%= link_to 'Redeem Reward', rewards_path %>
     <% end %>
   </div>

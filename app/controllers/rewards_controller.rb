@@ -12,7 +12,6 @@ class RewardsController < ApplicationController
 
   def index
     @rewards = Reward.all
-    @user = current_user
   end
 
   def update
