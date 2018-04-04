@@ -4,6 +4,6 @@ class Admin::PointsController < Admin::BaseController
   end
 
   def edit
-    @points = Point.find(params[:id])
+    @point = Point.find(params[:id])
   end
 end

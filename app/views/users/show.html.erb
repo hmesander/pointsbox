@@ -1,10 +1,13 @@
-  <h1>Welcome, <%= current_user.username %>!</h1>
-  <% @users.each do |user| %>
-      <%= user.username %>
-      <%= user.total_points %>
-      <%= link_to "Assign Points to #{user.username}", new_admin_point_path %>
-      <%= link_to "Delete Points from #{user.username}", edit_admin_point_path %>
-  <% end %>
-  <%= link_to 'Log Out', logout_path, method: 'delete' %>
-  <h1>Welcome, <%= current_user.username %>!</h1>
-  Total Points: <%= @user.total_points %>
+<% if  %>
+<h1>Welcome, <%= current_user.username %>!</h1>
+<% @users.each do |user| %>
+    <%= user.username %>
+    <%= user.total_points %>
+    <%= link_to "Assign Points to #{user.username}", new_admin_point_path %>
+    <% if user.points %>
+      <%= link_to "Delete Points from #{user.username}", edit_admin_point_path(user.points) %>
+    <% end %>
+<% end %>
+<h1>Welcome, <%= current_user.username %>!</h1>
+Total Points: <%= @user.total_points %>
+<%= link_to 'Log Out', logout_path, method: 'delete' %>
