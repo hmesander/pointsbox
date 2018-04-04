@@ -12,7 +12,7 @@ describe 'User' do
 
       expect(page).to have_content(reward.title)
       expect(page).to have_content(reward.description)
-      expect(page).to have_content('Redeem Reward')
+      expect(page).to have_content("Redeem #{reward.title}")
       expect(page).to_not have_content('Add a Reward')
       expect(page).to_not have_content('Update Reward')
       expect(page).to_not have_content('Delete Reward')
