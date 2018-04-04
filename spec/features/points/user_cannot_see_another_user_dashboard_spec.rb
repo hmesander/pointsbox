@@ -14,6 +14,10 @@ describe 'User' do
       visit user_path(user2)
 
       expect(page).to have_content("The page you were looking for doesn't exist.")
+
+      visit user_path(user1)
+
+      expect(page).to have_content("Welcome, #{user1.username}!")
     end
   end
 end
