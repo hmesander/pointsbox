@@ -8,14 +8,16 @@ describe 'User' do
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
 
-      point1 = user1.points.create!(status: 'active')
-      point2 = user1.points.create!(status: 'active')
-      point3 = user2.points.create!(status: 'active')
-      point4 = user2.points.create!(status: 'active')
+      user1.points.create!
+      user2.points.create!
 
       visit user_path(user2)
 
-      expect(current_path).to eq(root_path)
+      expect(page).to have_content("The page you were looking for doesn't exist.")
+
+      visit user_path(user1)
+
+      expect(page).to have_content("Welcome, #{user1.username}!")
     end
   end
 end

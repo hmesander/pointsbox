@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180404133930) do
+ActiveRecord::Schema.define(version: 20180404210025) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,8 +20,6 @@ ActiveRecord::Schema.define(version: 20180404133930) do
     t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "number"
-    t.integer "keep", default: 0
     t.index ["user_id"], name: "index_points_on_user_id"
   end
 
@@ -32,6 +30,17 @@ ActiveRecord::Schema.define(version: 20180404133930) do
     t.text "description"
     t.binary "image"
     t.integer "value"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_rewards_on_user_id"
+  end
+
+  create_table "user_rewards", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "reward_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["reward_id"], name: "index_user_rewards_on_reward_id"
+    t.index ["user_id"], name: "index_user_rewards_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -40,7 +49,12 @@ ActiveRecord::Schema.define(version: 20180404133930) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "role", default: 0
+    t.integer "available_points", default: 0
+    t.integer "redeemed_points", default: 0
   end
 
   add_foreign_key "points", "users"
+  add_foreign_key "rewards", "users"
+  add_foreign_key "user_rewards", "rewards"
+  add_foreign_key "user_rewards", "users"
 end

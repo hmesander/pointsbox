@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Guest'
+describe 'Guest' do
   describe 'visits rewards index' do
     it 'they see a list of rewards' do
       reward = Reward.create!(title: 'PhoneTime', value: 30, description: 'Awesome!', image: 'public/phone.jpeg')
@@ -14,3 +14,4 @@ describe 'Guest'
       expect(page).to_not have_content('Delete Reward')
     end
   end
+end

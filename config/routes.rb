@@ -3,20 +3,20 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :users, only: [:new, :show, :create]
+  resources :rewards
+  resources :points
+
+  resources :user_rewards
+
+  namespace :admin do
+    resources :rewards
+    resources :points
+    resources :users do
+      resources :points, only: [:create, :destroy]
+    end
+  end
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
-
-  namespace :admin do
-    resources :rewards
-  end
-
-  resources :rewards
-
-  namespace :admin do
-    resources :points
-  end
-
-  resources :points
 end
