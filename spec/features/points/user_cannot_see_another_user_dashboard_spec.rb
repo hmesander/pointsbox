@@ -8,8 +8,8 @@ describe 'User' do
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
 
-      user1.points.create!(number: 5)
-      user2.points.create!(number: 10)
+      user1.points.create!
+      user2.points.create!
 
       visit user_path(user2)
 

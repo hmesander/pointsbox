@@ -37,15 +37,4 @@ describe User, type: :model do
       expect(user.default?).to be_truthy
     end
   end
-
-  describe 'instance methods' do
-    describe '.total_points' do
-      it 'returns total points for a user' do
-        user = User.create!(username: 'Haley', password: 'test')
-        user.points.create!(number: 4)
-
-        expect(user.total_points).to eq(4)
-      end
-    end
-  end
 end
