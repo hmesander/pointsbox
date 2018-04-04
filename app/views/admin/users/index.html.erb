@@ -1,9 +1,4 @@
 <h1>Welcome, <%= current_user.username %>!</h1>
 <% @users.each do |user| %>
-    <%= user.username %>
-    Total Points: <%= user.total_points %>
-    <%= link_to "Assign Points to #{user.username}", new_admin_point_path, title: user.username %>
-    <% if user.points %>
-      <%= link_to "Delete Points from #{user.username}", edit_admin_point_path(user.points.first) %>
-    <% end %>
+  <%= link_to user.username, admin_user_path(user) %>
 <% end %>

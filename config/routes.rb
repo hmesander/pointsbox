@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :users
+    resources :users do
+      resources :points, only: [:create, :destroy]
+    end
   end
 
   resources :rewards
