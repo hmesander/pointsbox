@@ -6,8 +6,7 @@ class UserRewardsController < ApplicationController
     if current_user.available_points >= reward_value
       user_reward.save
       current_user.change_point_values(reward_value)
-      flash[:notice] = "You have redeemed this reward!"
-      redirect_to user_path(current_user)
+      redirect_to user_path(current_user), notice: "You have redeemed this reward!"
     else
       flash[:notice] = "Sorry, you don't have enough available points!"
       redirect_to rewards_path
