@@ -16,6 +16,9 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @users = User.all
+    unless session[:user_id] == @user.id
+      render file: "/public/404"
+    end
   end
 
   private

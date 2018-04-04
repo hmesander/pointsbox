@@ -1,13 +1,7 @@
-<% if  %>
-<h1>Welcome, <%= current_user.username %>!</h1>
-<% @users.each do |user| %>
-    <%= user.username %>
-    <%= user.total_points %>
-    <%= link_to "Assign Points to #{user.username}", new_admin_point_path %>
-    <% if user.points %>
-      <%= link_to "Delete Points from #{user.username}", edit_admin_point_path(user.points) %>
-    <% end %>
+<% if current_user %>
+  <h1>Welcome, <%= current_user.username %>!</h1>
+  Total Points: <%= @user.total_points %>
+  <%= link_to 'Log Out', logout_path, method: 'delete' %>
+<% else %>
+  <%= render file: "/public/404" %>
 <% end %>
-<h1>Welcome, <%= current_user.username %>!</h1>
-Total Points: <%= @user.total_points %>
-<%= link_to 'Log Out', logout_path, method: 'delete' %>

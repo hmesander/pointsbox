@@ -3,4 +3,5 @@ class Point < ApplicationRecord
 
   enum status: [:active, :redeemed]
   enum keep: [:keep, :eliminate]
+
 end

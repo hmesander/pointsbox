@@ -12,7 +12,6 @@ class RewardsController < ApplicationController
 
   def index
     @rewards = Reward.all
-    @user = User.find(params[:id])
   end
 
   def update

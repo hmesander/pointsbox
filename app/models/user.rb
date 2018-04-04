@@ -6,6 +6,6 @@ class User < ApplicationRecord
   enum role: %w(default admin)
 
   def total_points
-    points.count
+    points.sum(:number)
   end
 end

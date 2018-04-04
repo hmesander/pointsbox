@@ -12,6 +12,10 @@ Rails.application.routes.draw do
     resources :rewards
   end
 
+  namespace :admin do
+    resources :users
+  end
+
   resources :rewards
 
   namespace :admin do

@@ -8,7 +8,7 @@ describe 'Admin' do
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
-      visit user_path(admin)
+      visit admin_users_path
 
       click_on "Assign Points to #{user.username}"
 
@@ -18,7 +18,7 @@ describe 'Admin' do
       fill_in "Number of Points", with: 30
       click_on 'Assign Points'
 
-      expect(current_path).to eq(user_path(user))
+      expect(current_path).to eq(admin_users_path)
       expect(page).to have_content("Total Points: 30")
     end
   end
