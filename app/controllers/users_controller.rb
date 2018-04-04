@@ -15,11 +15,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    unless session[:user_id] == @user.id
-      flash[:notice] = "You don't have access to this page!"
-      redirect_to root_path
-      return
-    end
+    @users = User.all
   end
 
   private
