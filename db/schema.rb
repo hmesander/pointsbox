@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180404193732) do
+ActiveRecord::Schema.define(version: 20180404210025) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,8 @@ ActiveRecord::Schema.define(version: 20180404193732) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "role", default: 0
+    t.integer "available_points", default: 0
+    t.integer "redeemed_points", default: 0
   end
 
   add_foreign_key "points", "users"

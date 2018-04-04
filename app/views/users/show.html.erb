@@ -1,6 +1,13 @@
 <% if @correct_user %>
   <h1>Welcome, <%= current_user.username %>!</h1>
-  Total Points: <%= @user.points.count %>
+  Available Points: <%= current_user.available_points %>
+  Redeemed Points: <%= current_user.redeemed_points %>
+  <% current_user.rewards.each do |reward| %>
+    <%= reward.title %>
+    <%= reward.description %>
+    <%= reward.value %>
+    <%= reward.image %>
+  <% end %>
   <%= link_to 'Log Out', logout_path, method: 'delete' %>
 <% else %>
   <%= render file: "/public/404" %>
