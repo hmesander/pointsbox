@@ -7,8 +7,7 @@
 
   <div class="info">
     <div class="box">
-      <strong>Available Points:</strong>  <%= current_user.available_points %>
-      <strong>Redeemed Points:</strong>  <%= current_user.redeemed_points %>
+      <strong>Total Points:</strong>  <%= @user.total_points %>
     </div>
     <div class="flex-box">
       <strong>Rewards Earned:</strong><br>
@@ -17,7 +16,6 @@
           <strong><%= reward.title %></strong><br>
           <%= reward.description %><br>
           <%= reward.value %> Points<br>
-          <%= reward.image %><br>
         </div>
       <% end %>
     </div>

@@ -11,7 +11,10 @@ describe 'User' do
     fill_in 'Username', with: 'hmesander'
     fill_in 'Password', with: 'test'
 
-    click_on 'Log In'
+    within('.button') do
+      click_on 'Log In'
+    end
+
     expect(current_path).to eq(user_path(user))
 
     click_on 'Log Out'

@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'Guest' do
   describe 'visits rewards index' do
     it 'they see a list of rewards' do
-      reward = Reward.create!(title: 'PhoneTime', value: 30, description: 'Awesome!', image: 'public/phone.jpeg')
+      reward = Reward.create!(title: 'PhoneTime', value: 30, description: 'Awesome!')
 
       visit rewards_path
 

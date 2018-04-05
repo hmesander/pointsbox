@@ -31,7 +31,7 @@ class RewardsController < ApplicationController
   end
 
   def edit
-    
+
   end
 
   private

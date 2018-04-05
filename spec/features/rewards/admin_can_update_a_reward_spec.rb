@@ -4,7 +4,7 @@ describe 'Admin' do
   describe 'completes edit reward form and clicks submit' do
     it 'they update a reward' do
       admin = User.create!(username: 'hmesander', password: 'test', role: 1)
-      reward = Reward.create(title: 'PhoneTime', value: 30, description: 'Awesome!', image: 'public/phone.jpeg')
+      reward = Reward.create(title: 'PhoneTime', value: 30, description: 'Awesome!')
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 

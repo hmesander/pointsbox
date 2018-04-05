@@ -7,12 +7,13 @@ class User < ApplicationRecord
   has_secure_password
   enum role: %w(default admin)
 
-  def update_points
-    update_attributes(available_points: (available_points + 1))
+  def total_points
+    points.count
   end
 
-  def change_point_values(amount)
-    decrement!(:available_points, amount)
-    increment!(:redeemed_points, amount)
+  def subtract_points(value)
+    value.times do
+      points.last.destroy
+    end
   end
 end
