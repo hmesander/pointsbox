@@ -1,6 +1,18 @@
-<h1>Welcome, <%= current_user.username %>!</h1>
-<%= link_to 'Log Out', logout_path, method: 'delete' %>
-<%= link_to 'Create a New User', new_user_path %>
-<% @users.each do |user| %>
-  <%= link_to user.username, admin_user_path(user) %>
-<% end %>
+<div class="page-header">
+  <h1>Welcome, <%= current_user.username %>!</h1>
+</div>
+
+<%= render partial: "partial/flash" %>
+
+<div class="new">
+  <%= link_to "Create a New User", new_user_path %>
+</div>
+
+<div class="info">
+  <strong>Users:</strong><br>
+  <% @users.each do |user| %>
+    <div class="new">
+      <%= link_to user.username, admin_user_path(user) %>
+    </div>
+  <% end %>
+</div>

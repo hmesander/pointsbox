@@ -2,9 +2,7 @@
   <h1>Rewards</h1>
 </div>
 
-<div class="navigation">
-  <%= link_to "<< Back to Homepage", root_path %>
-</div>
+<%= render partial: "partial/flash" %>
 
 <div class="info">
   <% @rewards.each do |reward| %>
