@@ -5,8 +5,7 @@ class Admin::PointsController < Admin::BaseController
 
   def create
     @user = User.find(params[:user_id])
-    @point = @user.points.create!
-    @user.update_points
+    Point.create!(user_id: @user.id, status: 0)
     redirect_to admin_user_path(@user)
   end
 

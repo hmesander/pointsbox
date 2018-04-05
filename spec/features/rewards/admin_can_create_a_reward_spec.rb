@@ -16,7 +16,7 @@ describe 'Admin' do
       fill_in 'Title', with: 'Phone Time'
       fill_in 'Value', with: 40
       fill_in 'Description', with: 'Awesome!'
-      page.attach_file('Image', Rails.root + 'public/phone.jpeg')
+
       click_on 'Create Reward'
 
       expect(current_path).to eq(admin_rewards_path)

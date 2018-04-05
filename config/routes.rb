@@ -4,8 +4,9 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :show, :create]
   resources :rewards
+  resources :points, only: [:edit]
 
-  resources :user_rewards, only: [:create]
+  resources :user_rewards, only: [:create, :update]
 
   namespace :admin do
     resources :rewards, only: [:index, :new, :edit]
