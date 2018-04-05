@@ -4,14 +4,13 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :show, :create]
   resources :rewards
-  resources :points
 
-  resources :user_rewards
+  resources :user_rewards, only: [:create]
 
   namespace :admin do
-    resources :rewards
-    resources :points
-    resources :users do
+    resources :rewards, only: [:index, :new, :edit]
+    resources :points, only: [:new, :create, :destroy]
+    resources :users, only: [:index, :show] do
       resources :points, only: [:create, :destroy]
     end
   end
