@@ -7,11 +7,13 @@ class User < ApplicationRecord
   has_secure_password
   enum role: %w(default admin)
 
-  def available_points
-    points.where(status: :active).count
+  def total_points
+    points.count
   end
 
-  def redeemed_points
-    points.where(status: :redeemed).count
+  def subtract_points(value)
+    value.times do
+      points.last.destroy
+    end
   end
 end

@@ -13,7 +13,7 @@ describe 'User' do
       visit user_path(user)
 
       expect(page).to have_content("Welcome, #{user.username}!")
-      expect(page).to have_content('Available Points: 5')
+      expect(page).to have_content('Total Points: 5')
     end
   end
 end

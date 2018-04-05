@@ -19,8 +19,7 @@ describe 'User' do
       click_on "Redeem #{reward1.title}"
 
       expect(current_path).to eq(user_path(user))
-      expect(page).to have_content("Available Points: 12")
-      expect(page).to have_content("Redeemed Points: 3")
+      expect(page).to have_content("Total Points: 2")
       expect(page).to have_content(reward1.title)
       expect(page).to have_content(reward1.description)
     end

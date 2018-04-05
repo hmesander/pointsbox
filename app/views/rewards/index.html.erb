@@ -12,7 +12,7 @@
       <strong><h4><%= reward.value %> Points</h4></strong>
       <% if current_user %>
       <div class="button">
-        <h3><%= link_to "Redeem #{reward.title}", edit_reward_path(reward) %></h3>
+        <h3><%= link_to "Redeem #{reward.title}", user_rewards_path(user_id: current_user.id, reward_id: reward.id), method: :post %></h3>
       </div>
       <% end %>
     </div>
