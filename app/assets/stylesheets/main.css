@@ -32,7 +32,7 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
-  background-image: image-url(crayon.png);
+  background-image: url(crayon.png);
   background-size: auto;
   background-repeat: round;
   height: 300px;
