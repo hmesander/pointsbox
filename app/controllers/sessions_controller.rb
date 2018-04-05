@@ -13,6 +13,7 @@ class SessionsController < ApplicationController
         redirect_to user_path(user)
       end
     else
+      flash[:notice] = "Try again!"
       render :new
     end
   end
