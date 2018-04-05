@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Pointsbox</title>
+    <title>PointsBox</title>
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech" rel="stylesheet">
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
   </head>
-
   <body>
+    <%= render partial: "partial/navigation" %>
     <%= yield %>
   </body>
 </html>

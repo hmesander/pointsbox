@@ -1,0 +1,16 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <%= link_to "PointsBox", root_path, class: "navbar-brand" %>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="<%= "active" if params[:controller] == "rewards" %>"><%= link_to "Rewards", rewards_path %></li>
+      <% if current_user %>
+        <li class="<%= "active" if params[:controller] == "user" %>"><%= link_to "My Profile", user_path(current_user) %></li>
+        <li class="<%= "active" if params[:controller] == "sessions" %>"><%= link_to "Log Out", logout_path, method: "delete" %></li>
+      <% else %>
+        <li class="<%= "active" if params[:controller] == "sessions" %>"><%= link_to "Log In", login_path %></li>
+        <li class="<%= "active" if params[:controller] == "users" %>"><%= link_to 'Register', new_user_path %></li>
+      <% end %>
+  </div>
+</nav>
