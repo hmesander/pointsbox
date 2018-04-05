@@ -12,8 +12,8 @@
   <% @rewards.each do |reward| %>
     <div class="box">
       <strong><%= reward.title %></strong>
-      <strong><%= reward.description %></strong>
-      <strong><%= reward.value %> Points</strong>
+      <strong><h4><%= reward.description %></h4></strong>
+      <strong><h4><%= reward.value %> Points</h4></strong>
       <% if current_user %>
         <div class="button">
           <%= link_to "Update Reward", edit_admin_reward_path(reward), title: reward.title %>
