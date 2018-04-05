@@ -1,14 +1,22 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <%= link_to "PointsBox", root_path, class: "navbar-brand" %>
+      <a class="navbar-brand" href="/">
+        <img src="/assets/logo.png" width="30" height="30" class="d-inline-block align-top" alt="PointsBox Logo">
+        PointsBox
+      </a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="<%= "active" if params[:controller] == "rewards" %>"><%= link_to "Rewards", rewards_path %></li>
-      <% if current_user %>
+      <% if current_user && current_user.admin? %>
+        <li class="<%= "active" if params[:controller] == "rewards" %>"><%= link_to "Rewards", admin_rewards_path %></li>
+        <li class="<%= "active" if params[:controller] == "user" %>"><%= link_to "Users", admin_users_path %></li>
+        <li class="<%= "active" if params[:controller] == "sessions" %>"><%= link_to "Log Out", logout_path, method: "delete" %></li>
+      <% elsif current_user && current_user.default? %>
+        <li class="<%= "active" if params[:controller] == "rewards" %>"><%= link_to "Rewards", rewards_path %></li>
         <li class="<%= "active" if params[:controller] == "user" %>"><%= link_to "My Profile", user_path(current_user) %></li>
         <li class="<%= "active" if params[:controller] == "sessions" %>"><%= link_to "Log Out", logout_path, method: "delete" %></li>
       <% else %>
+        <li class="<%= "active" if params[:controller] == "rewards" %>"><%= link_to "Rewards", rewards_path %></li>
         <li class="<%= "active" if params[:controller] == "sessions" %>"><%= link_to "Log In", login_path %></li>
         <li class="<%= "active" if params[:controller] == "users" %>"><%= link_to 'Register', new_user_path %></li>
       <% end %>

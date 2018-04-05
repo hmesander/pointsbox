@@ -1,16 +1,29 @@
 body {
-  font-family: 'Share Tech', sans-serif;
+  font-family: 'Gloria Hallelujah';
+  font-size: 22px;
   margin-bottom: 100px
 }
 
 .navbar-header a {
   font-size: 30px;
-  padding: 25px
+  padding: 25px;
+  margin: 0px
+}
+
+.navbar-default {
+  margin: 0px
 }
 
 .navbar-nav {
   padding: 10px;
   font-size: 20px;
+  margin: 0px;
+}
+
+.intro {
+  text-align: center;
+  margin: 20px;
+  font-size: 50px
 }
 
 .page-header {
@@ -19,19 +32,23 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
-  background-image: url(desktop.jpg);
-  background-size: cover;
+  background-image: url(crayon.png);
+  background-size: auto;
+  background-repeat: round;
   height: 300px;
   text-align: center;
-  padding-top: 100px;
-  padding-right: 550px;
-  padding-left: 550px;
-  margin: 0px
+  vertical-align: middle;
+  color: white;
+  margin: 0px;
+  font-size: 70px
 }
 
-h1 {
-  font-size: 50px;
-  background-color: silver;
+.logo img {
+  width: 30%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0px
 }
 
 .create-link a {
@@ -48,92 +65,45 @@ h1 {
   color: white
 }
 
-th {
-  font-size: 25px;
-  text-align: center
-}
-
-td {
-  font-size: 20px;
-  text-align: center
-}
-
-.btn {
-  font-size: 20px;
-  padding: 0px 5px;
-  color: white
-}
-
-.desktop {
-  justify-content: center;
-  padding: 0px, 60px;
-  margin: 0px
-}
-
-#table {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 10px
-}
-
-#table td {
-  padding: 5px 30px;
-  margin: 5px 10px;
-  align-content: center;
-  font-size: 20px;
-}
-
-.contacts-comments {
-  text-align: center;
-  font-size: 30px
-}
-
 .info {
   text-align: center;
-  font-size: 30px
+  font-size: 30px;
+  margin-top: 30px;
+  margin-bottom: 10px
 }
 
-.comment-form {
-  font-size: 25px
+.button a {
+  box-shadow: 2px 2px;
+  background-color: purple;
+  color: white;
+  width: 25%;
+  height: 30px;
+  padding: 3px;
+  font-size: 18px;
+  border: solid;
+  border-width: 1px;
 }
 
-.contacts-comments .comment {
-  font-size: 20px
-}
-
-.buttons {
-  text-align: center
-}
-
-.buttons .btn {
-  font-size: 25px;
-  margin: 20px
-}
-
-.navigation {
-  font-size: 25px;
-  margin: 10px
+.button {
+  text-align: center;
+  margin: 20px;
 }
 
 .form {
-  margin: 0px 300px;
-  font-size: 25px
+  width: 30%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px
 }
 
 .notice {
   text-align: center;
-  font-size: 30px
-}
-
-.flash {
-  text-align: center;
-  font-size: 30px;
-  color: darkred
-}
-
-.contact-form {
-  margin: 20px 550px;
-  font-size: 30px
+  font-size: 20px;
+  background-color: darkred;
+  margin: 10px 500px;
+  padding: 10px;
+  color: white
 }
 
 .flex-box {
@@ -144,7 +114,29 @@ td {
 }
 
 .box {
+  display: flex;
+  flex-direction: column;
   font-size: 30px;
   margin: 25px 60px;
+  text-align: center;
+  border: solid;
+  padding: 10px;
+  margin: 20px
+}
+
+.new a {
+  box-shadow: 2px 2px;
+  background-color: blue;
+  color: lightgray;
+  width: 15%;
+  height: 30px;
+  padding: 3px;
+  font-size: 18px;
+  border: solid;
+  border-width: 1px;
+}
+
+.new {
+  margin-top: 20px;
   text-align: center
 }

@@ -1,14 +1,27 @@
 <% if @correct_user %>
-  <h1>Welcome, <%= current_user.username %>!</h1>
-  Available Points: <%= current_user.available_points %>
-  Redeemed Points: <%= current_user.redeemed_points %>
-  <% current_user.rewards.each do |reward| %>
-    <%= reward.title %>
-    <%= reward.description %>
-    <%= reward.value %>
-    <%= reward.image %>
-  <% end %>
-  <%= link_to 'Log Out', logout_path, method: 'delete' %>
+  <div class="page-header">
+    Welcome, <%= current_user.username %>!
+  </div>
+
+  <%= render partial: "partial/flash" %>
+
+  <div class="info">
+    <div class="box">
+      <strong>Available Points:</strong>  <%= current_user.available_points %>
+      <strong>Redeemed Points:</strong>  <%= current_user.redeemed_points %>
+    </div>
+    <div class="flex-box">
+      <strong>Rewards Earned:</strong><br>
+      <% current_user.rewards.each do |reward| %>
+        <div class="box">
+          <strong><%= reward.title %></strong><br>
+          <%= reward.description %><br>
+          <%= reward.value %> Points<br>
+          <%= reward.image %><br>
+        </div>
+      <% end %>
+    </div>
+  </div><br>
 <% else %>
   <%= render file: "/public/404" %>
 <% end %>

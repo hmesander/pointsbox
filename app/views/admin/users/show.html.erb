@@ -1,3 +1,16 @@
-Total Points: <%= @user.points.count %><br>
-<%= link_to "Assign Point to #{@user.username}", admin_user_points_path(@user), method: :post %>
-<%= link_to "Delete Point from #{@user.username}", admin_user_point_path(@user), method: :delete %>
+<div class="page-header">
+  <%= @user.username %>'s Points
+</div>
+
+<%= render partial: "partial/flash" %>
+
+<div class="info">
+  <strong>Total Points:</strong>  <%= @user.points.count %><br>
+</div>
+
+<div class="button">
+  <%= link_to "Assign Point to #{@user.username}", admin_user_points_path(@user), method: :post %>
+</div>
+<div class="button">
+  <%= link_to "Delete Point from #{@user.username}", admin_user_point_path(@user), method: :delete %>
+</div>
