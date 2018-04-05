@@ -1,7 +1,10 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <%= link_to "PointsBox", root_path, class: "navbar-brand" %>
+      <a class="navbar-brand" href="/">
+        <img src="/assets/logo.png" width="30" height="30" class="d-inline-block align-top" alt="PointsBox Logo">
+        PointsBox
+      </a>
     </div>
     <ul class="nav navbar-nav">
       <% if current_user && current_user.admin? %>

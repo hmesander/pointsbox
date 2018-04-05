@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1>Welcome, <%= current_user.username %>!</h1>
+  All Users
 </div>
 
 <%= render partial: "partial/flash" %>
@@ -9,10 +9,9 @@
 </div>
 
 <div class="info">
-  <strong>Users:</strong><br>
   <% @users.each do |user| %>
-    <div class="new">
-      <%= link_to user.username, admin_user_path(user) %>
-    </div>
+  <div>
+    <%= link_to user.username, admin_user_path(user) %>
+  </div>
   <% end %>
 </div>
