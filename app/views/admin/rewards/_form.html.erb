@@ -1,26 +1,30 @@
+<div class="page-header">
+  Add A Reward Here!
+</div>
+
 <div class="form">
   <%= form_for @reward do |f| %>
     <div class="form-group">
-      <%= f.label :title %>
+      <%= f.label :title %>:
       <%= f.text_field :title %>
     </div>
 
     <div class="form-group">
-      <%= f.label :value %>
+      <%= f.label :value %>:
       <%= f.number_field :value %>
     </div>
 
     <div class="form-group">
-      <%= f.label :description %>
+      <%= f.label :description %>:
       <%= f.text_area :description %>
     </div>
 
     <div class="form-group">
-      <%= f.label :image %>
+      <%= f.label :image %>:
       <%= f.file_field :image %>
     </div>
 
-    <div class="buttons">
+    <div class="button">
       <%= f.submit %>
     </div>
   <% end %>
